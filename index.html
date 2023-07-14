@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-     <title>Form Template</title>
+     <title>Title Case</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/forms.css">
+  <style>
+    #output{
+      border-radius: 5px;
+      min-height: 40px;
+      border: 1px solid black;
+      margin: auto;
+      width: 50%;
+      font-size: x-large;
+    }
+  </style>
  </head>
  <body>
      <header>
-     <h1 class="page-header">Form Template</h1>
+     <h1 class="page-header">Title Case</h1>
         <nav class="topnav" id="myTopnav">
             <a href="index.html" class="active">Home</a>
             <a href="#">Link</a>
@@ -20,83 +30,51 @@
      </header>
      
    <main class="wrapper">
- 
   <h2 class="subheader">Place form code below:</h2>
-  <form method="get" action="" class="main-form">
+  
+  
+  <div id="output"> Output goes here</div>
+  <form method="post" action="" class="main-form">
+
     <div>
-      <label for="FirstName">First Name</label> <br>
-      <input type="text" name="FirstName" id=" FirstName" placeholder="First Name" required autofocus>
+      <label for="input">First Name</label> <br>
+      <input type="input" name="input" id="input" placeholder="input" required autofocus>
     </div>
 
     <div>
-      <label for="LastName">Last Name</label> <br>
-      <input type="text" name="LastName" id=" LastName" placeholder="Last Name" required>  
+      <input type="submit" id="submit">
     </div>
 
-    <div>
-      <label for="Email">Email </label> <br>
-      <input type="email" name="Email" id=" Email" placeholder="Email" required> 
-    </div>
-    
-    <div>
-      <label for="Adress">Adress</label> <br>
-      <input type="text" name="Adress" id=" Adress" placeholder="Adress" required>
-    </div>
 
-    <div>
-      <label for="City">City</label> <br>
-      <input type="text" name="City" id=" City" placeholder="City" required>
-    </div>
-
-    <div>
-      <label for="State">  State </label><br>
-        <select name="State" id="State">
-          <option value=""> Please select a State</option>
-          <option value="AK">Alaska</option>
-          <option value="CA">California</option>
-          <option value="OR">Origon</option>
-          <option value="WA">Washinigton</option>
-        </select>
-    </div>
-
-    <div>
-      <fieldset>
-        <legend>Would you like to join our mailing list? </legend>
-        <label> <input type="radio" name="JoingMailingList" value="Yes" required>Yes</label ><br>
-        <label> <input type="radio" name="JoingMailingList" value="No" >No</label>
-      </fieldset>
-    </div>
-
-    <div>
-      <fieldset>
-        <legend>Intreseted In?</legend>
-        <label> <input type="checkbox" name="IntresetedIn" value="Website" required>Website</label><br>
-        <label> <input type="checkbox" name="OnlineCalander" value="" required>Online Calander</label><br>
-        <label> <input type="checkbox" name="ContactForm" value="Website" required>Contact Form</label><br>
-        <label> <input type="checkbox" name="IntresetedIn" value="Lollipos" required>Complimentary Lollipos</label><br>
-      </fieldset>
-    </div>
-
-    <Div>
-      <label for="Commnets">Commnets</label><br>
-      <textarea name="Commnets" id="Commnets"  placeholder="Commnets"  cols="35" rows="5"></textarea>
-    </Div>
-    <div>
-      <input type="submit">
-    </div>
    
   </form>
     <h3>Page Origins</h3>
     <p>The HTML/CSS comes from Sara Newman's Web Fundamentals class as taught at Seattle Central. This page provides a basis for students to build a responsive portal page.</p>
     <p>The mobile navigation originates from <a href="https://www.w3schools.com/howto/howto_js_mobile_navbar.asp" target="_blank">W3Schools</a></p>
     <footer>
-      <p><small>&copy; 2021-<span id="this-year"></span> by 
-          YOUR NAME HERE, All Rights Reserved ~ 
-          <a id="html-checker" href="#" target="_blank">Check HTML</a> ~ 
-          <a id="css-checker" href="#" target="_blank">Check CSS</a></small>
-     </p>
+
+  <p><small>&copy; 2021-<span id="this-year"></span> by 
+      YOUR NAME HERE, All Rights Reserved ~ 
+      <a id="html-checker" href="#" target="_blank">Check HTML</a> ~ 
+      <a id="css-checker" href="#" target="_blank">Check CSS</a></small>
+  </p>
     </footer>
   </main>
   <script src="js/main.js"></script>   
+  
+  <script>
+   const mySubmmit = document.querySelector("#submit")
+   console.log(mySubmmit);
+
+   mySubmmit.addEventListener("click",function(ev){
+  ev.preventDefault();
+     const myInput = document.querySelector("#input")
+     const myOutput = document.querySelector("#output")
+     myOutput.innerHTML = myInput.value;
+    //  alert(myInput.value);
+
+   });
+  </script>
+
  </body>
 </html>
